@@ -1,0 +1,149 @@
+{
+  "test_name": "Solobot Full System Integration Test (Dry-Run)",
+  "timestamp": "2026-06-09T18:42:58.684693+00:00",
+  "components": {
+    "Redis": {
+      "status": "READY",
+      "details": "v8.0.0 \u2014 connected to localhost:6379",
+      "timestamp": "2026-06-09T18:42:58.803072+00:00"
+    },
+    "Python Dependencies": {
+      "status": "READY",
+      "details": "pandas v3.0.3, numpy v2.4.6",
+      "timestamp": "2026-06-09T18:42:59.032106+00:00"
+    },
+    "AI Engine Code": {
+      "status": "READY",
+      "details": "Found at /home/team/shared/artifacts/ai_engineer/integrated/engine.py",
+      "timestamp": "2026-06-09T18:42:59.032167+00:00"
+    },
+    "Rust Sources": {
+      "status": "READY",
+      "details": "Wallet Tracker + Execution Engine sources present",
+      "timestamp": "2026-06-09T18:42:59.032186+00:00"
+    },
+    "Data Directory": {
+      "status": "READY",
+      "details": "/home/team/shared/data",
+      "timestamp": "2026-06-09T18:42:59.032196+00:00"
+    }
+  },
+  "tests": [
+    {
+      "name": "Signal Field Validation",
+      "status": "PASS",
+      "details": "All 7 required fields present",
+      "timestamp": "2026-06-09T18:42:59.033256+00:00"
+    },
+    {
+      "name": "Signal Structure Validation",
+      "status": "PASS",
+      "details": "type, version, data envelope valid",
+      "timestamp": "2026-06-09T18:42:59.033288+00:00"
+    },
+    {
+      "name": "Chain Field",
+      "status": "PASS",
+      "details": "chain=ethereum",
+      "timestamp": "2026-06-09T18:42:59.033297+00:00"
+    },
+    {
+      "name": "Redis Channel Name",
+      "status": "PASS",
+      "details": "Signals channel: solobot:signals",
+      "timestamp": "2026-06-09T18:42:59.033304+00:00"
+    },
+    {
+      "name": "Redis PubSub Send/Receive",
+      "status": "PASS",
+      "details": "Signal roundtrip OK (ID: 0f9a2f5e...)",
+      "timestamp": "2026-06-09T18:42:59.236994+00:00"
+    },
+    {
+      "name": "Signal Validation (Rust mock)",
+      "status": "PASS",
+      "details": "All fields valid",
+      "timestamp": "2026-06-09T18:42:59.237151+00:00"
+    },
+    {
+      "name": "Chain Routing",
+      "status": "PASS",
+      "details": "Routing to EVM execution path (ethereum)",
+      "timestamp": "2026-06-09T18:42:59.237161+00:00"
+    },
+    {
+      "name": "Execution Result Generation",
+      "status": "PASS",
+      "details": "status=success, tx=0x421a13a6d086..., block=12345702, gas=150000",
+      "timestamp": "2026-06-09T18:42:59.237377+00:00"
+    },
+    {
+      "name": "Wallet Event Logging",
+      "status": "PASS",
+      "details": "Logged 2 events to /home/team/shared/data/wallet_events.jsonl",
+      "timestamp": "2026-06-09T18:42:59.238194+00:00"
+    },
+    {
+      "name": "Event Field Validation (ethereum)",
+      "status": "PASS",
+      "details": "All fields present for swap",
+      "timestamp": "2026-06-09T18:42:59.238224+00:00"
+    },
+    {
+      "name": "Event Field Validation (solana)",
+      "status": "PASS",
+      "details": "All fields present for swap",
+      "timestamp": "2026-06-09T18:42:59.238271+00:00"
+    },
+    {
+      "name": "AI \u2192 Redis publish",
+      "status": "PASS",
+      "details": "",
+      "timestamp": "2026-06-09T18:42:59.238550+00:00"
+    },
+    {
+      "name": "Redis \u2192 Execution Engine",
+      "status": "PASS",
+      "details": "",
+      "timestamp": "2026-06-09T18:42:59.238570+00:00"
+    },
+    {
+      "name": "Execution Engine processing",
+      "status": "PASS",
+      "details": "",
+      "timestamp": "2026-06-09T18:42:59.238585+00:00"
+    },
+    {
+      "name": "Wallet Tracker logging",
+      "status": "PASS",
+      "details": "",
+      "timestamp": "2026-06-09T18:42:59.238657+00:00"
+    },
+    {
+      "name": "Execution result format",
+      "status": "PASS",
+      "details": "",
+      "timestamp": "2026-06-09T18:42:59.238672+00:00"
+    },
+    {
+      "name": "Signal ID traceability",
+      "status": "PASS",
+      "details": "",
+      "timestamp": "2026-06-09T18:42:59.238677+00:00"
+    },
+    {
+      "name": "FULL LOOP",
+      "status": "PASS",
+      "details": "All 6 end-to-end checks passed",
+      "timestamp": "2026-06-09T18:42:59.238682+00:00"
+    }
+  ],
+  "overall_status": "PASS",
+  "summary": {
+    "total_tests": 18,
+    "passed": 18,
+    "failed": 0,
+    "warnings": 0,
+    "elapsed_seconds": 0.55
+  }
+}
